@@ -1,6 +1,6 @@
 # État du projet — Mission business nocturne
 
-**Statut : mission terminée.** Recherche, construction et vérification finale complètes. Corrections issues de la vérification finale critique appliquées (voir en bas de ce fichier). Rien ne bloque la livraison.
+**Statut : PIVOT EN COURS.** Zenaide a été livré (voir historique ci-dessous, conservé pour référence) mais **abandonné par Thomas** après revue : il est déjà client d'Unipros (concurrent direct identifié dans la recherche) pour gérer l'admin de son activité Hydropropreté, ce qui invalidait le narratif produit et l'intérêt personnel du projet. Nouvelle contrainte assouplie : Thomas est ouvert à un vrai système d'abonnement (paiement en ligne réel) et à un **petit budget de pub (10-30€/mois)** pour valider la demande — la contrainte initiale "zéro pub" n'est plus stricte. Un nouveau brainstorm complet (Round 2) est en cours, voir `recherche-marche.md` section "Round 2".
 
 ## Idée retenue : Zenaide
 

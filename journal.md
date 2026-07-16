@@ -22,5 +22,12 @@
   5. `Attestations.tsx` recalculait le taux de crédit d'impôt en dur au lieu d'utiliser la constante partagée `TAUX_CREDIT_IMPOT` → corrigé.
   6. `CLAUDE.md` contenait des sections obsolètes du tout début de nuit ("Décisions prises : à remplir") → nettoyé et réécrit à jour.
 - ✅ Rebuild + re-test end-to-end après corrections : **12/12 tests passent toujours**, PDF générés vérifiés (facture 6871 octets, attestation 5918 octets).
-- ✅ **Mission terminée.** Tous les livrables sont cohérents entre eux et avec les sources de recherche.
+- ✅ **Mission Zenaide terminée et livrée** (code, recherche, prévisions, vérification finale — tout cohérent).
+
+## Pivot post-livraison — abandon de Zenaide
+
+- Retour de Thomas après revue : il est **déjà client d'Unipros** (coopérative concurrente identifiée dans `research/idee_A_saas_sap.md`) pour la gestion admin de son activité Hydropropreté — devis, factures, attestations, avance immédiate y sont déjà gérés. Le narratif personnel de Zenaide ("Thomas a galéré à la main avec ces tâches") était donc factuellement faux, et la proposition de valeur ("reprendre la main sur sa propre facturation à moindre coût qu'une coop") n'était pas assez motivante pour lui pour continuer.
+- Question annexe posée par Thomas : peut-il gérer l'avance immédiate lui-même sans passer par Unipros ? Réponse sourcée : techniquement oui (le statut micro-entrepreneur n'est pas un obstacle), mais ça nécessite une habilitation à l'API Urssaf (Tiers de Prestation ou Tierce Déclaration Cesu) — un vrai projet d'intégration technique, pas un simple formulaire, c'est justement pour ça qu'on l'avait exclu du MVP.
+- **Décision : Zenaide abandonné.** Nouveaux critères de Thomas pour la suite : il aime le modèle SaaS, veut un vrai système d'abonnement (paiement en ligne réel, pas juste un mailto), et est OK pour un **petit budget de pub** (10-30€/mois) pour tester la demande — assouplissement de la contrainte initiale "zéro pub payante".
+- Deux pistes proposées (widget devis+crédit d'impôt SAP, simulateur LMNP) : Thomas demande un **brainstorm complet** à la place, sans se limiter à ces deux options. Relance d'une nouvelle Phase 1 ci-dessous.
 

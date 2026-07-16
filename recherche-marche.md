@@ -77,3 +77,51 @@ En cas de dépassement, la sanction n'est pas automatique : mise en demeure pré
 - **#3 — Idée E** (guide + templates "Lancer sa micro-entreprise SAP nettoyage") : réutilisée comme **lead magnet gratuit** pour l'idée gagnante (acquisition SEO/communautés) plutôt que produit payant autonome ; peut devenir un produit payant secondaire (19-29€) si l'audience grossit.
 - Idée B (widget devis + calcul crédit d'impôt affiché) est **intégrée comme fonctionnalité** dans l'idée gagnante plutôt que traitée comme business séparé.
 - Idée D est définitivement écartée (marché verrouillé par des acteurs sur-financés).
+
+---
+
+# Round 2 — Pivot post-Zenaide
+
+## Pourquoi ce pivot
+
+Zenaide a été construit, testé et livré (voir ci-dessus), mais **abandonné par Thomas** : il est déjà client d'Unipros (la coopérative concurrente identifiée section "Idée A") pour gérer l'admin de son activité Hydropropreté — devis, factures, attestations, avance immédiate y sont déjà pris en charge. Le narratif produit ("j'ai vécu cette douleur à la main") était donc factuellement faux, et sans cette légitimité vécue, l'intérêt personnel du projet s'effondre.
+
+**Nouvelles contraintes (assouplies par rapport à la mission initiale)** :
+- Modèle **SaaS avec abonnement réel** (paiement en ligne intégré, pas un simple mailto) — priorité affirmée par Thomas.
+- **Petit budget de pub accepté : 10-30€/mois**, pour tester/valider la demande plutôt que de deviner. Ce n'est plus "zéro pub" comme dans la mission initiale, mais ça reste un budget de test, pas un budget d'acquisition à grande échelle (donc ça n'ouvre pas la porte aux marchés dominés par des acteurs très financés — voir Idée D, toujours NO-GO).
+- Toutes les autres contraintes restent : 5-10h/semaine, budget ≤100€/mois tout compris (pub incluse), stack RN/Expo/Firebase/web simple, pas de VPS, dropshipping exclu, ne pas dupliquer Hydropropreté ni Runleveling.
+
+## Brainstorm — 20 nouvelles idées (sans se limiter au secteur nettoyage/SAP)
+
+| # | Idée | Catégorie | Marché cible | Justification rapide |
+|---|------|-----------|---------------|----------------------|
+| 1 | Widget "devis en ligne + crédit d'impôt affiché" pour entreprises de nettoyage/SAP (reprise de l'ancienne idée B, comme feature marketing pour LE SITE du client, pas un outil de gestion interne — ne concurrence donc pas Unipros) | Micro-outil payant B2B | France (nettoyage/SAP) | Angle mort concurrentiel réel (personne n'affiche le crédit d'impôt sur un devis en ligne), testable avec un petit budget pub ciblé gérants |
+| 2 | Simulateur de rentabilité et fiscalité LMNP / meublé de tourisme (micro-BIC vs réel, impact de la réforme fiscale 2025 dite "loi Le Meur" sur les meublés de tourisme non classés) | SaaS niche | France (investisseurs locatifs, hôtes Airbnb/Booking) | Connaissance perso forte (LMNP), sujet chaud et récent (changement de loi = pic de recherche), marché large mais déjà servi par des acteurs établis à vérifier |
+| 3 | "Carnet d'entretien locatif" : suivi des travaux/entretiens/factures/garanties pour petits propriétaires bailleurs (LMNP et classique) | SaaS niche | France (propriétaires bailleurs particuliers) | Obligation déclarative existe, pas de leader clair identifié a priori, à vérifier |
+| 4 | SaaS de rappels de rendez-vous (SMS/WhatsApp) anti no-show pour indépendants locaux (coiffeurs, coachs, thérapeutes, praticiens bien-être) | SaaS niche B2B | France | Douleur connue (no-show = perte sèche), marché large, mais Planity/Doctolib/Calendly déjà très présents à vérifier |
+| 5 | Outil de gestion des avis Google post-prestation pour TPE locales (nettoyage, artisans, professions libérales) | Micro-SaaS | France | Complète l'idée #4, angle "réputation locale" avec petit budget pub géociblé possible |
+| 6 | Version "B2B clubs/coachs" du moteur Runleveling : outil de gamification/suivi d'entraînement vendu aux clubs de course à pied ou coachs sportifs indépendants (pas aux coureurs individuels — pas de doublon avec Runleveling) | SaaS niche | France (clubs/coachs sportifs) | Réutilise l'expertise technique Runleveling (Expo/Firebase/Strava) sans dupliquer le produit existant |
+| 7 | Simulateur de plus-value immobilière à la revente (calcul fiscal simplifié) en outil freemium/payant | Micro-outil payant | France (investisseurs/vendeurs immobiliers) | Ponctuel par nature (utilisé une fois par transaction), revenu récurrent difficile |
+| 8 | Générateur d'annonces immobilières optimisées (texte + conseils photos) pour petits bailleurs et primo-vendeurs | Micro-outil / SaaS | France | Concurrence forte des outils IA génériques (ChatGPT, Jasper), différenciation faible a priori |
+| 9 | Suivi de conformité/travaux obligatoires pour propriétaires bailleurs (DPE, diagnostics, échéances légales) avec alertes | SaaS niche | France (bailleurs) | Douleur réglementaire réelle (DPE, décence), momentum réglementaire fort ces dernières années |
+| 10 | Marketplace de mise en relation propriétaires LMNP ↔ conciergeries locales (Pau/64 puis extension) | Marketplace | Local puis régional | Effet réseau, trop lourd pour 5-10h/semaine, écarté d'office |
+| 11 | Automatisation de demande d'avis + relance clients par SMS pour salons de coiffure/instituts de beauté indépendants | Automatisation B2B locale | France | Proche de #4/#5, marché déjà équipé (Fresha, Planity intègrent ça) à vérifier |
+| 12 | SaaS de suivi de garanties/factures pour particuliers (rappel avant expiration de garantie, stockage centralisé) | Micro-outil B2C | France/international | Marché grand public difficile à monétiser (habitude du gratuit), acquisition B2C coûteuse même avec petit budget pub |
+| 13 | Widget de prise de RDV + acompte en ligne pour indépendants (concurrence directe Calendly/Doctolib/Planity) | SaaS | France | Marché déjà saturé par des acteurs très installés, différenciation difficile à identifier a priori |
+| 14 | Outil de calcul/suivi de charges récupérables et régularisation de charges locatives pour bailleurs | Micro-SaaS | France (bailleurs, surtout multi-lots) | Douleur comptable réelle mais niche étroite (bailleurs avec plusieurs lots/charges communes) |
+| 15 | Simulateur d'éligibilité et de montant d'aides à la rénovation énergétique (MaPrimeRénov' etc.) avec mise en relation artisans locaux | Micro-outil + lead-gen | France | Sujet réglementé et changeant vite (risque d'obsolescence rapide de l'info), déjà beaucoup d'acteurs (simulateurs officiels + privés) |
+| 16 | App de suivi de séries/habitudes sportives gamifiée pour clubs de sport amateurs (tennis, escalade, natation) — dans la lignée de #6 mais généraliste multi-sport | SaaS niche B2B | France (clubs/associations sportives) | Marché des logiciels de gestion de clubs déjà équipé (Gestion Club, ffe.fr, etc.) à vérifier |
+| 17 | Outil de facturation/devis spécialisé pour un métier de niche non-SAP (ex. photographes, professeurs particuliers, coachs sportifs indépendants) | Micro-SaaS | France | Généraliste facturation déjà ultra-concurrentiel (voir Idée D round 1, NO-GO) — risque de retomber dans le même piège |
+| 18 | Simulateur de reprise/rachat de bail commercial ou de local pro pour indépendants (niche très spécifique) | Micro-outil | France | Marché trop étroit, volume de recherche probablement faible |
+| 19 | Kit/simulateur "changement de statut fiscal LMNP" (micro-BIC vers réel, ou vers LMP) avec calcul d'impact | Micro-outil dans la continuité de #2 | France | À fusionner avec #2 plutôt qu'idée séparée |
+| 20 | SaaS de suivi de trésorerie prévisionnelle simple pour micro-entrepreneurs multi-activités (alerte seuils, prévision CA) | SaaS niche | France | Risque de retomber dans le marché saturé identifié en round 1 (Idée D, NO-GO) — écarté sauf angle très spécifique non couvert |
+
+## Top 5 retenues pour recherche approfondie (Round 2)
+
+1. **Idée 1** — Widget devis + crédit d'impôt affiché pour entreprises nettoyage/SAP (reprise ciblée, testée cette fois avec l'hypothèse d'un petit budget pub).
+2. **Idée 2** — Simulateur de rentabilité/fiscalité LMNP et meublé de tourisme, incluant l'impact de la réforme fiscale récente sur les meublés de tourisme non classés.
+3. **Idée 3** — Carnet d'entretien locatif (suivi travaux/factures/garanties) pour petits propriétaires bailleurs.
+4. **Idée 4** — SaaS de rappels anti no-show (SMS/WhatsApp) pour indépendants locaux (coiffeurs, coachs, thérapeutes).
+5. **Idée 6** — Version B2B (clubs/coachs sportifs) du moteur de gamification Runleveling, vendue aux structures plutôt qu'aux coureurs individuels.
+
+*(Recherche approfondie en cours — sous-agents lancés en parallèle, résultats à suivre dans les sections dédiées ci-dessous.)*
