@@ -44,16 +44,15 @@ await etape("Tableau de bord accessible et vide au départ", async () => {
 await etape("Créer un client", async () => {
   await page.goto(`${BASE}/app/clients`);
   await page.click("text=+ Ajouter un client");
-  await page.fill('input[required]', ""); // no-op, precise fill below
   await page.selectOption("select", "Mme");
-  const inputs = await page.locator("form input").all();
-  // prenom, nom in order after civilite select
-  await page.fill("form >> label:has-text('Prénom') + input", "Claire");
-  await page.fill("form >> label:has-text('Nom') + input", "Martin");
-  await page.fill("form >> label:has-text('Adresse') + input", "5 rue du Hédas");
-  await page.fill("form >> label:has-text('Code postal') + input", "64000");
-  await page.fill("form >> label:has-text('Ville') + input", "Pau");
-  await page.fill("form >> label:has-text('Email') + input", "claire.martin@example.fr");
+  // Utilisation de :text-is() (correspondance exacte) pour éviter toute
+  // collision de sous-chaîne (ex. "Nom" est un sous-texte de "Prénom").
+  await page.fill("form >> label:text-is('Prénom') + input", "Claire");
+  await page.fill("form >> label:text-is('Nom') + input", "Martin");
+  await page.fill("form >> label:text-is('Adresse') + input", "5 rue du Hédas");
+  await page.fill("form >> label:text-is('Code postal') + input", "64000");
+  await page.fill("form >> label:text-is('Ville') + input", "Pau");
+  await page.fill("form >> label:text-is('Email') + input", "claire.martin@example.fr");
   await page.click('button:has-text("Enregistrer")');
   await page.waitForSelector("text=Claire Martin");
 });
@@ -85,6 +84,19 @@ await etape("Marquer la facture comme payée", async () => {
   await page.waitForTimeout(200);
 });
 
+await etape("Le PDF de la facture se génère et se télécharge (jsPDF)", async () => {
+  const [download] = await Promise.all([
+    page.waitForEvent("download"),
+    page.click('button:has-text("PDF")'),
+  ]);
+  const chemin = await download.path();
+  if (!chemin) throw new Error("Aucun fichier téléchargé");
+  const fs = await import("node:fs");
+  const taille = fs.statSync(chemin).size;
+  if (taille < 1000) throw new Error(`PDF suspicieusement petit : ${taille} octets`);
+  console.log(`     (PDF généré : ${download.suggestedFilename()}, ${taille} octets)`);
+});
+
 await etape("Le livre de recettes reflète la facture payée", async () => {
   await page.goto(`${BASE}/app/livre-recettes`);
   await page.waitForSelector("text=Claire Martin");
@@ -95,6 +107,19 @@ await etape("Une attestation fiscale est proposée pour l'année en cours", asyn
   await page.goto(`${BASE}/app/attestations`);
   await page.waitForSelector("text=Claire Martin");
   await page.waitForSelector("text=44,00");
+});
+
+await etape("Le PDF d'attestation fiscale se génère (jsPDF)", async () => {
+  const [download] = await Promise.all([
+    page.waitForEvent("download"),
+    page.click('button:has-text("PDF")'),
+  ]);
+  const chemin = await download.path();
+  if (!chemin) throw new Error("Aucun fichier téléchargé");
+  const fs = await import("node:fs");
+  const taille = fs.statSync(chemin).size;
+  if (taille < 1000) throw new Error(`PDF suspicieusement petit : ${taille} octets`);
+  console.log(`     (PDF généré : ${download.suggestedFilename()}, ${taille} octets)`);
 });
 
 await etape("Le suivi avance immédiate liste la facture", async () => {
