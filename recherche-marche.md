@@ -125,3 +125,17 @@ Zenaide a été construit, testé et livré (voir ci-dessus), mais **abandonné 
 5. **Idée 6** — Version B2B (clubs/coachs sportifs) du moteur de gamification Runleveling, vendue aux structures plutôt qu'aux coureurs individuels.
 
 *(Recherche approfondie en cours — sous-agents lancés en parallèle, résultats à suivre dans les sections dédiées ci-dessous.)*
+
+## Résultats des 5 recherches Round 2
+
+| Idée | Verdict | Point clé |
+|------|---------|-----------|
+| **1 — Widget devis + crédit d'impôt (nettoyage/SAP)** | Réserves (inchangé) | Angle différenciant toujours réel et non copié, mais budget pub 10-30€/mois insuffisant pour valider (5-20 clics/mois seulement, échantillon dérisoire). Marché réellement adressable revu à la baisse (5-15k, pas 25-45k). |
+| **2 — Simulateur LMNP / meublé de tourisme** | Réserves fortes (4,5/10) | Réforme fiscale 2025 ("loi Le Meur") confirmée et réelle, mais un concurrent quasi identique existe déjà (simulateurlmnp.fr, freemium + 12€/mois) et les gros acteurs (LMNP.ai, Ownily) ont déjà mis à jour leurs outils — fenêtre de différenciation déjà refermée. |
+| **3 — Carnet d'entretien locatif** | **NO-GO (3/10)** | Bloqué structurellement par le Carnet d'Information du Logement (CLÉA/Qualitel), gratuit et quasi-obligatoire par la loi depuis 2023 — pas un problème marketing, un mur réglementaire. |
+| **4 — SaaS anti no-show (indépendants)** | **NO-GO (3/10)** | Marché dominé par des acteurs très financés (Doctolib, Planity) ; même les niches espérées (coachs sportifs, profs particuliers) sont déjà couvertes (KOACHER Pro, AZEOO). |
+| **6 — B2B clubs sportifs (moteur Runleveling)** | **NO-GO (fortes réserves)** | Marché minuscule (~1800 clubs FFA running ciblables), aucune preuve de demande (la fidélisation en club passe par l'humain, pas un outil), et risque Strava qui déprécie ses endpoints clubs en septembre 2026. |
+
+**Constat transversal important** : sur les 5 idées testées avec l'hypothèse d'un budget pub de 10-30€/mois, **aucune** n'a pu être validée ou invalidée par ce budget — le CPC B2B en France (1,5 à 8€ selon secteur) ne permet que 5 à 60 clics/mois, un échantillon statistiquement non significatif. Les sources consultées recommandent plutôt 200-2000€/mois pour un vrai test publicitaire B2B. **Le petit budget pub envisagé ne change donc pas fondamentalement la donne** par rapport à une stratégie 100% organique — il vaut mieux le garder pour un test ponctuel concentré une fois un signal qualitatif positif obtenu autrement (communautés, forums).
+
+**Aucune idée du Round 2 n'obtient un GO franc.** Idée 1 (widget devis) reste la moins mauvaise option (réserves, pas NO-GO), mais sa validation réelle passe par de la présence gratuite en communautés (groupes Facebook, forums), pas par de la pub payante.
