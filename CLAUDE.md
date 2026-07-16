@@ -1,6 +1,6 @@
 # État du projet — Mission business nocturne
 
-**Statut** : Phase 1 terminée. Phase 2 (construction) en cours.
+**Statut** : Phases 1 et 2 terminées. Phase 3 (livrables finaux) en cours — vérification finale critique en cours via sous-agent.
 
 ## Idée retenue : Zenaide
 
@@ -21,6 +21,14 @@ Micro-SaaS de niche pour micro-entrepreneurs déclarés Services à la Personne 
 
 ## Pricing retenu
 Freemium : gratuit à vie jusqu'à 3 clients actifs. Payant : 39€/an (~3,90€/mois) — nettement sous NeedMe (84€/an). Justification détaillée dans `previsions.md`.
+
+## État final (fin de nuit)
+- Application construite, buildée (`npm run build` OK) et testée end-to-end (Playwright, 12/12 tests passent, PDF générés vérifiés réels) — voir `outputs/zenaide/`.
+- Rebuild propre confirmé (npm ci depuis zéro dans un dossier séparé + re-run des tests e2e : succès).
+- Copywriting complet, pages légales rédigées (avec placeholders identifiés à compléter par Thomas), prévisions sourcées.
+- Livrable principal : `outputs/README-DEMARRAGE.md`.
+- Un sous-agent de vérification finale critique relit tous les livrables pour cohérence avant livraison — ses conclusions seront intégrées si des corrections sont nécessaires.
+- Prochaine étape si reprise après compaction : lire `outputs/README-DEMARRAGE.md` pour le statut, vérifier si des corrections issues de la vérification finale restent à appliquer, sinon la mission est terminée.
 
 ## Contexte clé
 - Repo = Runleveling (app existante, NE PAS MODIFIER). Nouveau business dans des sous-dossiers dédiés.
