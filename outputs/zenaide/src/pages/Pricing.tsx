@@ -53,7 +53,7 @@ export function Pricing() {
                 39 € <span style={{ fontSize: 16, fontWeight: 400 }}>/ an</span>
               </h2>
               <p style={{ color: "var(--color-text-muted)", fontSize: 14 }}>
-                Soit environ 3,90 €/mois. Sans engagement, résiliable à tout moment.
+                Soit 3,25 €/mois. Sans engagement, résiliable à tout moment.
               </p>
               <ul style={{ paddingLeft: 18, fontSize: 14, color: "var(--color-text)" }}>
                 <li>Tout ce qui est dans l'offre Gratuite</li>
@@ -68,9 +68,9 @@ export function Pricing() {
                 Passer à l'offre payante
               </a>
               <p style={{ fontSize: 12, color: "var(--color-text-muted)", marginTop: 10, marginBottom: 0 }}>
-                Sans engagement, résiliable en un clic à tout moment. Aucun frais
-                caché, aucun palier surprise. (Paiement en ligne bientôt disponible
-                — en attendant, contactez-nous directement.)
+                Sans engagement, résiliable à tout moment par simple email. Aucun
+                frais caché, aucun palier surprise. (Paiement en ligne bientôt
+                disponible — en attendant, contactez-nous directement.)
               </p>
             </div>
           </div>

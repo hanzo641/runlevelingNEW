@@ -43,12 +43,12 @@
 | 4 | Créer un compte Firebase (recommandé vu ton expérience Runleveling) OU Vercel OU Cloudflare Pages, et déployer `npm run build` puis le contenu de `dist/` | 30-45 min | Oui |
 | 5 | Pointer le nom de domaine vers l'hébergement choisi (DNS) | 10 min + propagation (jusqu'à 24h) | Oui |
 | 6 | Choisir l'hébergeur définitif et supprimer les blocs alternatifs non retenus dans les mentions légales et la politique de confidentialité (`legal.ts`) | 5 min | Oui |
-| 7 | Créer une adresse email de contact sur le domaine (ex. Cloudflare Email Routing, gratuit) | 15 min | Recommandé |
+| 7 | Créer l'adresse `contact@zenaide.fr` (ex. Cloudflare Email Routing, gratuit) — **le bouton "Passer à l'offre payante" de la page Tarifs pointe déjà vers cette adresse en dur**, il ne fonctionnera pas tant qu'elle n'existe pas | 15 min | Oui, pour que le bouton de paiement fonctionne (pas bloquant pour le reste du site) |
 | 8 | Poster le message d'outreach dans 2-3 groupes Facebook SAP/nettoyage + envoyer l'email à la FEDESAP (textes prêts dans `copywriting.md`) | 30 min | Non, mais utile pour les 1ers utilisateurs |
 | 9 | Publier les 2 articles SEO déjà rédigés (`copywriting.md`) sur le site ou un blog associé | 30-45 min | Non |
 | 10 | Prévoir la mise en place d'un lien de paiement (Stripe Payment Link, gratuit à créer) pour l'offre à 39€/an dès les premières demandes | 20 min | Non (peut attendre les 1ers utilisateurs payants) |
 
-**Temps total estimé pour un lancement minimal (actions 1 à 7) : environ 2h-2h30**, étalables sur plusieurs soirées dans le budget des 5-10h/semaine.
+**Temps total estimé pour un lancement minimal (actions 1 à 7) : environ 1h40-2h20**, étalables sur plusieurs soirées dans le budget des 5-10h/semaine.
 
 ## Rappel légal important
 

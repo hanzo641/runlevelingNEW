@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { lireProfil, listerClients, listerDocuments, totalDocument } from "../lib/storage";
 import { genererPdfAttestation } from "../lib/pdf";
+import { TAUX_CREDIT_IMPOT } from "../types";
 
 function formaterEuros(m: number) {
   return m.toLocaleString("fr-FR", { style: "currency", currency: "EUR" });
@@ -93,7 +94,7 @@ export function Attestations() {
                 {client.prenom} {client.nom}
               </td>
               <td>{formaterEuros(total)}</td>
-              <td>{formaterEuros(total * 0.5)}</td>
+              <td>{formaterEuros(total * TAUX_CREDIT_IMPOT)}</td>
               <td style={{ textAlign: "right" }}>
                 <button className="btn btn-ghost" style={{ padding: "6px 12px", fontSize: 13 }} onClick={() => telechargerUne(client.id)}>
                   PDF

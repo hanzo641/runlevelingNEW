@@ -82,7 +82,7 @@ Non. Zenaide est conçu pour être utilisé sans aucune connaissance comptable o
 Oui. Les informations de votre micro-entreprise et de vos clients sont hébergées de façon sécurisée et ne sont ni revendues ni partagées avec des tiers à des fins commerciales.
 
 **Puis-je annuler à tout moment ?**
-Oui. L'abonnement payant est sans engagement et résiliable en un clic depuis votre espace, à tout moment. Vous conservez l'accès jusqu'à la fin de la période déjà payée.
+Oui. L'abonnement payant est sans engagement et résiliable à tout moment par simple email. Vous conservez l'accès jusqu'à la fin de la période déjà payée.
 
 **Est-ce que Zenaide remplace mon expert-comptable ?**
 Non. Zenaide vous aide à produire des documents conformes (devis, factures, livre de recettes, attestations) et à suivre vos obligations administratives liées au SAP. Il ne remplace pas les conseils personnalisés d'un expert-comptable, notamment pour votre comptabilité globale ou vos choix fiscaux.
@@ -91,7 +91,7 @@ Non. Zenaide vous aide à produire des documents conformes (devis, factures, liv
 Zenaide s'adresse aux micro-entrepreneurs déclarés en services à la personne : ménage à domicile, jardinage, garde d'enfants, soutien scolaire, bricolage, aide non-lourde aux seniors, et activités similaires relevant du régime SAP.
 
 **Que se passe-t-il quand je dépasse 3 clients actifs ?**
-Vous pouvez continuer à utiliser Zenaide en passant à l'offre payante à 39 €/an (environ 3,90 €/mois). Vos données et votre historique sont conservés, rien n'est perdu.
+Vous pouvez continuer à utiliser Zenaide en passant à l'offre payante à 39 €/an (3,25 €/mois). Vos données et votre historique sont conservés, rien n'est perdu.
 
 **Le calcul du crédit d'impôt affiché est-il garanti exact dans tous les cas ?**
 Zenaide applique les règles de calcul du crédit d'impôt de 50 % telles que définies pour les services à la personne. Le montant final accordé par l'administration fiscale dépend de la situation individuelle de chaque client (plafonds, autres crédits d'impôt, situation familiale) : Zenaide affiche une estimation calculée à partir des informations que vous renseignez, pas une garantie de remboursement.
@@ -131,7 +131,7 @@ CTA : **« Créer mon compte gratuit »**
 
 ### Plan Payant
 
-**39 € / an — soit environ 3,90 € / mois**
+**39 € / an — soit 3,25 € / mois**
 *Sans engagement. Résiliable en 1 clic.*
 
 Inclus :
@@ -142,7 +142,7 @@ Inclus :
 CTA : **« Passer à l'offre payante »**
 
 *Ligne de réassurance sous le bouton d'achat :*
-**Sans engagement, résiliable en un clic à tout moment. Aucun frais caché, aucun palier surprise.**
+**Sans engagement, résiliable à tout moment par simple email. Aucun frais caché, aucun palier surprise.**
 
 ---
 

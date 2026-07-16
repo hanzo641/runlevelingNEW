@@ -71,7 +71,7 @@ const FAQ = [
   },
   {
     q: "Que se passe-t-il quand je dépasse 3 clients actifs ?",
-    r: "Vous pouvez continuer à utiliser Zenaide en passant à l'offre payante à 39 €/an (environ 3,90 €/mois). Vos données restent intactes, rien n'est perdu.",
+    r: "Vous pouvez continuer à utiliser Zenaide en passant à l'offre payante à 39 €/an (3,25 €/mois). Vos données restent intactes, rien n'est perdu.",
   },
   {
     q: "Le calcul du crédit d'impôt affiché est-il garanti exact dans tous les cas ?",
