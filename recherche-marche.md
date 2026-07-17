@@ -139,3 +139,48 @@ Zenaide a été construit, testé et livré (voir ci-dessus), mais **abandonné 
 **Constat transversal important** : sur les 5 idées testées avec l'hypothèse d'un budget pub de 10-30€/mois, **aucune** n'a pu être validée ou invalidée par ce budget — le CPC B2B en France (1,5 à 8€ selon secteur) ne permet que 5 à 60 clics/mois, un échantillon statistiquement non significatif. Les sources consultées recommandent plutôt 200-2000€/mois pour un vrai test publicitaire B2B. **Le petit budget pub envisagé ne change donc pas fondamentalement la donne** par rapport à une stratégie 100% organique — il vaut mieux le garder pour un test ponctuel concentré une fois un signal qualitatif positif obtenu autrement (communautés, forums).
 
 **Aucune idée du Round 2 n'obtient un GO franc.** Idée 1 (widget devis) reste la moins mauvaise option (réserves, pas NO-GO), mais sa validation réelle passe par de la présence gratuite en communautés (groupes Facebook, forums), pas par de la pub payante.
+
+---
+
+# Round 3 — Brainstorm générique (sans lien avec nettoyage/SAP/immobilier/running)
+
+## Pourquoi ce nouveau round
+
+Le Round 2 restait ancré sur les domaines de connaissance "insider" de Thomas (nettoyage/SAP, immobilier LMNP) par défaut — critique justifiée de Thomas : aucune de ces idées n'était un GO franc, et il n'a pas de attache émotionnelle particulière à ces secteurs pour la suite. Thomas confirme ne pas avoir de hobby/passion spécifique à exploiter à part "aimer bosser derrière un ordi" — donc ce round explore des idées **génériques de micro-SaaS pour développeur solo**, sans lien avec son activité existante, en s'appuyant sur des catégories qui fonctionnent régulièrement pour des indie hackers (Product Hunt, Indie Hackers, X/Twitter) plutôt que sur une expertise sectorielle personnelle.
+
+**Constat conservé du Round 2** : un budget pub de 10-30€/mois ne suffit pas à valider une cible B2B professionnelle (CPC 2-8€). Ce round privilégie donc des idées validables par **canaux organiques peu coûteux** (Product Hunt, Reddit, Indie Hackers, X/Twitter, communautés de développeurs/freelances/créateurs — audiences que Thomas peut atteindre en tant que pair, comme un développeur qui s'adresse à d'autres développeurs/freelances).
+
+## Brainstorm — 20 idées génériques
+
+| # | Idée | Catégorie | Marché cible | Justification rapide |
+|---|------|-----------|---------------|----------------------|
+| 1 | Relance automatique de factures impayées pour freelances/TPE (dunning-as-a-service simplifié et pas cher, vs Chaser/Upflow orientés entreprises) | SaaS niche B2B | France + international anglophone possible | Douleur universelle et documentée (retards de paiement), concurrents existants mais orientés PME/ETI, pas freelances solo |
+| 2 | Agrégateur de revenus multi-plateformes pour freelances/travailleurs de plateformes (Malt+ComeUp+Fiverr, ou livreurs/VTC multi-apps) avec vue consolidée pour la déclaration micro-entrepreneur | SaaS niche | France | Douleur réelle (dispersion des revenus), mais risque de retomber dans le piège "compta AE" déjà NO-GO (Round 1, Idée D) si pas assez différencié |
+| 3 | Générateur automatique de changelog + status page pour petits produits SaaS/indie makers | Micro-outil dev-tool | International (indie hackers) | Niche "produit pour développeurs", Thomas est lui-même dans cette audience (crédibilité de pair), marché anglophone large |
+| 4 | Outil de repurposing de contenu IA (transformer un article/une vidéo en posts réseaux sociaux) pour créateurs solo/petites marques | SaaS IA | International | Espace très chaud mais déjà très encombré (Opus Clip, Repurpose.io) — différenciation à vérifier |
+| 5 | Générateur de devis/estimation de projet pour freelances techniques (dev/design) à partir d'un cahier des charges | Micro-SaaS | International (freelances tech) | Niche precise, Thomas connaît le métier de développeur freelance de l'intérieur |
+| 6 | Outil de veille de prix/alertes pour un marché de niche (pièces détachées, matériel spécifique, occasion) | Micro-outil | International | Modèle éprouvé (CamelCamelCamel) mais dépend fortement du choix de niche précise |
+| 7 | SaaS de mock-interview IA pour préparation d'entretiens d'embauche tech | SaaS IA | International | Concurrents gratuits puissants (Google Interview Warmup) — risque de cannibalisation par du gratuit |
+| 8 | Outil de suivi de mentions de marque/produit sur réseaux sociaux pour petites entreprises (alternative simplifiée à Mention/Brand24) | SaaS niche | International | Marché existant avec acteurs établis, différenciation prix/simplicité à creuser |
+| 9 | Générateur de posts LinkedIn "ghostwriting IA" pour indépendants/consultants FR | SaaS IA | France | Marché chaud (personal branding) mais très concurrentiel (Taplio, Supergrow), angle francophone à vérifier |
+| 10 | Outil de gestion de licences/téléchargements pour développeurs indie vendant des plugins/templates/thèmes | Micro-SaaS dev-tool | International | Niche "vendre à d'autres devs", marché de niche mais qualifié |
+| 11 | Simple générateur de pages de destination ("landing page") + formulaire de liste d'attente pour lancement de produit | Micro-outil | International | Marché saturé d'outils no-code (Carrd, Framer) — différenciation difficile |
+| 12 | Outil de suivi de disponibilité/uptime + certificat SSL pour petits sites/SaaS indépendants | Micro-SaaS dev-tool | International | UptimeRobot domine avec un plan gratuit généreux — obstacle sérieux à la monétisation |
+| 13 | Assistant IA de rédaction de CGV/CGU/mentions légales adaptées par secteur pour créateurs de SaaS/sites indépendants | Micro-outil | International/France | Proche de l'idée écartée en Round 1 (générateurs légaux déjà saturés, gratuits) |
+| 14 | Outil de traduction/adaptation automatique de sites vitrine/SaaS pour l'export (multilingue) à destination de petits éditeurs indie | Micro-SaaS | International | Douleur réelle pour indie hackers qui veulent viser un marché international, concurrents existent (Weglot) mais chers |
+| 15 | Newsletter/agrégateur curaté de niche (ex. veille outils IA pour développeurs, ou veille freelance) monétisé par abonnement premium | Contenu + SaaS | International | Time-to-first-euro long (audience à construire), mais très faible coût de démarrage |
+| 16 | Outil de calcul/simulation de prix pour prestations freelances (aide à la fixation de tarif journalier) | Micro-outil | International | Proche de #5, à fusionner éventuellement |
+| 17 | SaaS de gestion de contrats/signatures simplifié pour freelances (alternative low-cost à DocuSign/Yousign pour un usage basique) | SaaS niche | France/International | Yousign (français, bien financé) et DocuSign dominent largement — marché verrouillé |
+| 18 | Outil de suivi de temps + facturation pour freelances techniques en mission (time tracking + invoice) | SaaS niche | International | Marché très encombré (Toggl, Harvest, Clockify gratuit) — différenciation difficile |
+| 19 | Plateforme de mise en relation entre développeurs indie pour du "code review" payant à la demande (peer review marketplace) | Marketplace | International | Petit marché de niche, effet réseau à amorcer, risque élevé pour un solo |
+| 20 | Outil d'automatisation de veille concurrentielle simplifiée pour petites entreprises (suivi de prix/changements sur sites concurrents) | Micro-SaaS | International | Existe déjà (Visualping, Distill) avec plans gratuits — différenciation à creuser |
+
+## Top 5 retenues pour recherche approfondie (Round 3)
+
+1. **Idée 1** — Relance automatique de factures impayées pour freelances/TPE, low-cost.
+2. **Idée 2** — Agrégateur de revenus multi-plateformes pour freelances/travailleurs multi-jobbing (à bien différencier du piège "compta AE" déjà NO-GO).
+3. **Idée 3** — Changelog + status page automatisés pour petits produits SaaS/indie makers.
+4. **Idée 5** — Générateur de devis/estimation de projet pour freelances techniques.
+5. **Idée 10** — Gestion de licences/téléchargements pour développeurs indie vendant du code (plugins/templates).
+
+*(Recherche approfondie en cours.)*
