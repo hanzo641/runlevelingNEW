@@ -184,3 +184,19 @@ Le Round 2 restait ancré sur les domaines de connaissance "insider" de Thomas (
 5. **Idée 10** — Gestion de licences/téléchargements pour développeurs indie vendant du code (plugins/templates).
 
 *(Recherche approfondie en cours.)*
+
+## Résultats des 5 recherches Round 3
+
+| Idée | Verdict | Point clé |
+|------|---------|-----------|
+| **1 — Relance factures impayées freelances** | **NO-GO (3/10)** | Déjà cloné par plusieurs indie hackers en 2026 (PayNudge repéré sous 6 domaines différents) — c'est une idée "à la mode" dans les guides micro-SaaS, donc sursaturée. Retour Indie Hackers sur une idée similaire : "as a standalone, it's a feature, not a product". |
+| **2 — Agrégateur revenus multi-plateformes** | **NO-GO (3/10)** | Aucune API publique chez Malt/Fiverr/Uber Eats/Deliveroo pour automatiser (seul l'import manuel est réaliste) ; concurrent quasi-identique déjà en ligne (Easy Earnings Tracker, 2,49$/mois) ; réforme réglementaire 2027 va résoudre gratuitement le cas d'usage fiscal français (déclaration automatique des plateformes à l'Urssaf). |
+| **3 — Changelog + status page indie makers** | **NO-GO (3/10)** | Segment déjà couvert par 8-10 concurrents (Sleekplan, ChangeCrab, Headway...) ; la combinaison exacte changelog+status page existe déjà (ReleaseLog, lancé sur Product Hunt 2026) ; UptimeRobot écrase la monétisation de la partie status page avec son plan gratuit généreux. |
+| **4 — Devis/estimation de projet pour freelances tech** | Réserves (GO prudent, 5,5/10) | Douleur réelle et documentée (59-76% des projets dépassent l'effort estimé, sous-tarification chronique chez les freelances) ; différenciation valable vs outils de mise en forme (Bonsai/HoneyBook ne font QUE la mise en forme, pas l'aide au chiffrage) — mais 5-6 concurrents explorent déjà cet angle précis (SpecBot vise la même cible quasi mot pour mot, Devtimate est fonctionnellement abouti mais cher/orienté agences). |
+| **5 — Gestion de licences pour devs indie** | **NO-GO (3/10)** | Marché déjà occupé par au moins 3 concurrents solo directs et rentables (Keygen.sh, LicenseSeat, KeyMint) + Freemius qui domine le WordPress. Beaucoup de développeurs préfèrent bricoler leur propre système plutôt que payer. |
+
+## Constat après 3 rounds (35 idées explorées, 15 recherches approfondies)
+
+**Aucune idée n'a obtenu de GO franc sur l'ensemble des trois rounds.** Le meilleur score reste "GO avec réserves" (5,5/10, obtenu deux fois : Idée E Round 1 - infoproduit SAP, et Idée 4 Round 3 - devis freelances tech). Le pattern qui se dégage sur le Round 3 en particulier : **la quasi-totalité des idées de micro-SaaS "évidentes" pour développeur solo sont déjà prises par d'autres indie hackers** qui ont eu la même idée et l'ont lancée plus vite (souvent trouvée via les mêmes guides/listes "meilleures idées de micro-SaaS 2026" que celles utilisées pour générer ce brainstorm). Ce n'est pas un problème de mauvaise idée, c'est un problème de timing/originalité dans un écosystème indie hacker aujourd'hui très dense et rapide.
+
+**Implication pour la suite** : plutôt que de continuer à chercher une idée totalement inoccupée (qui semble de moins en moins probable à budget de recherche constant), la décision doit se faire entre (a) choisir la moins mauvaise option et miser sur l'exécution/différenciation plutôt que sur l'absence de concurrence, ou (b) revenir vers une option à demande déjà bien prouvée mais nécessitant plus d'effort de vente humaine (Idée C Round 1 — site vitrine artisans, la seule idée sur 3 rounds avec des preuves de demande *directement* chiffrées et non déduites).
