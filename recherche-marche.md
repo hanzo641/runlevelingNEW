@@ -200,3 +200,25 @@ Le Round 2 restait ancré sur les domaines de connaissance "insider" de Thomas (
 **Aucune idée n'a obtenu de GO franc sur l'ensemble des trois rounds.** Le meilleur score reste "GO avec réserves" (5,5/10, obtenu deux fois : Idée E Round 1 - infoproduit SAP, et Idée 4 Round 3 - devis freelances tech). Le pattern qui se dégage sur le Round 3 en particulier : **la quasi-totalité des idées de micro-SaaS "évidentes" pour développeur solo sont déjà prises par d'autres indie hackers** qui ont eu la même idée et l'ont lancée plus vite (souvent trouvée via les mêmes guides/listes "meilleures idées de micro-SaaS 2026" que celles utilisées pour générer ce brainstorm). Ce n'est pas un problème de mauvaise idée, c'est un problème de timing/originalité dans un écosystème indie hacker aujourd'hui très dense et rapide.
 
 **Implication pour la suite** : plutôt que de continuer à chercher une idée totalement inoccupée (qui semble de moins en moins probable à budget de recherche constant), la décision doit se faire entre (a) choisir la moins mauvaise option et miser sur l'exécution/différenciation plutôt que sur l'absence de concurrence, ou (b) revenir vers une option à demande déjà bien prouvée mais nécessitant plus d'effort de vente humaine (Idée C Round 1 — site vitrine artisans, la seule idée sur 3 rounds avec des preuves de demande *directement* chiffrées et non déduites).
+
+## Round 4 — Scan de déclencheurs récents (méthode différente, marché mondial)
+
+Contrairement aux rounds 1-3 (brainstorm depuis des listes de catégories connues), ce round cherchait des **changements réglementaires ou techniques très récents (2025-2026)** créant une fenêtre d'opportunité fraîche pas encore comblée. Trois scans en parallèle : réglementation, tendances techniques/plateformes, demandes réelles sur Reddit/HN/Indie Hackers.
+
+### Découvertes principales
+
+| Piste | Priorité | Déclencheur | Couverture actuelle |
+|-------|----------|-------------|----------------------|
+| **Scanner de sécurité pour Agent Skills / plugins d'agents IA** ("VirusTotal pour les skills Claude/agents IA") | **Très haute** | Format SKILL.md très récent (fin 2025-2026), zéro barrière de publication (pas de signature, pas de sandbox). Étude Snyk : 36% des skills scannées ont des failles ; campagnes de malware confirmées début 2026. | Outils existants réservés aux entreprises (SkillsDirectory.com, Snyk enterprise). Pas d'outil self-service abordable. |
+| **Conformité "auto-renouvellement / résiliation en 1 clic" pour petits éditeurs SaaS US** | **Très haute** | Patchwork croissant de lois étatiques US (Californie, Colorado, New York, Minnesota, Maryland, Maine...) suite à l'annulation judiciaire de la règle fédérale FTC (juillet 2025) et une nouvelle procédure FTC relancée janvier 2026. Poursuites actives (règlement 2,5Md$ Amazon 2025, procédure Uber en cours). | Acteurs existants (ProsperStack, Chargebee, Recurly) ciblent l'entreprise, pricing "sur demande" — segment solo/petit SaaS non desservi. |
+| Observabilité légère pour serveurs MCP indie ("Sentry pour mes serveurs MCP") | Haute | La roadmap officielle MCP admet elle-même l'absence d'audit trail standardisé. | Solutions existantes enterprise-first (WorkOS, gateways). |
+| Kit conformité EU AI Act Article 50 (disclosure IA) | Haute mais fenêtre courte | Obligations dès le 2 août 2026, amendes jusqu'à 15-35M€. | Outils tout juste émergents (Disclo.eu, ActReady). Délai de mise sur le marché très serré. |
+| Garde-fous de dépenses IA pour petites équipes (Claude Code/Cursor) | Moyenne-haute | Dérapages budgétaires documentés en 2026. | Trou entre outils individuels gratuits et outils enterprise chers. |
+
+### Constat méthodologique important (scan "demandes réelles")
+
+Le 3e scan a révélé une information plus utile que n'importe quelle idée trouvée : il existe désormais (2026) toute une **industrie de sites qui aspirent Reddit/Hacker News à grande échelle et publient des listes "idées SaaS validées par de vraies douleurs Reddit"** (trend-seeker.app, bigideasdb.com, launchsaas.org, etc.). Ça explique en partie pourquoi les rounds précédents ont buté sur des idées déjà prises : même la méthode "chercher une vraie douleur exprimée en ligne" est devenue une liste générique consommée par des milliers d'autres indie hackers. Plusieurs idées à éviter explicitement car déjà largement diffusées par ces sites sont listées dans `research/round4_scan_demandes_reelles.md`.
+
+### Recommandation
+
+Les deux pistes prioritaires (scanner sécurité Agent Skills, conformité auto-renouvellement US) sont **plus prometteuses que tout ce qui a été trouvé dans les rounds 1-3** : déclencheur réglementaire/technique daté et vérifiable, besoin documenté par des sources tierces (pas déduit), concurrence actuelle limitée aux acteurs enterprise. Elles nécessitent une recherche de validation dédiée avant décision finale (concurrents directs solo/indie s'il y en a, taille réelle du marché adressable, faisabilité technique précise) — pas encore fait à ce stade.
