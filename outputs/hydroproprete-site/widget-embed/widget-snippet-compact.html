@@ -18,14 +18,17 @@
 #hydro-devis-widget-root input,#hydro-devis-widget-root textarea{width:100%;font-size:14px;padding:10px 12px;border-radius:8px;border:1px solid #e1e8ed;margin-bottom:10px;}
 #hydro-devis-widget-root .hydro-recap{padding:14px;margin-top:12px;font-size:13px;white-space:pre-wrap;border-radius:12px;border:1px solid #e1e8ed;background:#f7fafc;}
 </style>
-<div id="hydro-devis-widget-root"></div>
 <script>
 (function(){
+function demarrer(){
 var HYDRO_ARTICLES=[{id:"canape-2-3",nom:"Canape 2-3 places",prix:80},{id:"canape-4-5-angle",nom:"Canape 4-5 places / angle",prix:110},{id:"fauteuil",nom:"Fauteuil",prix:50},{id:"chaises-6",nom:"Ensemble de 6 chaises",prix:90},{id:"matelas-2p",nom:"Matelas 2 places",prix:90},{id:"matelas-1p",nom:"Matelas 1 place",prix:60},{id:"tapis",nom:"Tapis",prix:85}];
 var HYDRO_TAUX_CREDIT_IMPOT=0.5;
 var HYDRO_ENTREPRISE={telephone:"06 02 16 92 36",telephoneIntl:"33602169236",email:"hydroproprete@gmail.com"};
 function euros(m){return m.toLocaleString("fr-FR",{style:"currency",currency:"EUR"});}
-var root=document.getElementById("hydro-devis-widget-root");
+if(document.getElementById("hydro-devis-widget-root")){return;}
+var root=document.createElement("div");
+root.id="hydro-devis-widget-root";
+document.body.appendChild(root);
 var etat={ouvert:false,etape:"accueil",selection:{},ville:"",nom:"",telephone:"",notes:""};
 function quantitePour(id){return etat.selection[id]||0;}
 function totalGeneral(){var t=0;for(var id in etat.selection){var a=HYDRO_ARTICLES.filter(function(x){return x.id===id;})[0];if(a)t+=a.prix*etat.selection[id];}return t;}
@@ -99,5 +102,7 @@ else if(action==="envoyer-email"){window.location.href="mailto:"+HYDRO_ENTREPRIS
 });
 }
 render();
+}
+if(document.body){demarrer();}else{document.addEventListener("DOMContentLoaded",demarrer);}
 })();
 </script>

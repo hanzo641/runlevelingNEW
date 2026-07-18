@@ -1,6 +1,6 @@
 import { chromium } from "playwright";
 
-const BASE = "http://localhost:4196/test-harness-built.html";
+const BASE = "http://localhost:4197/test-harness-built.html";
 const browser = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome" });
 const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
 const erreursConsole = [];
