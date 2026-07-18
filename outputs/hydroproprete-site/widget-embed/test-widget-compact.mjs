@@ -1,6 +1,6 @@
 import { chromium } from "playwright";
 
-const BASE = "http://localhost:4198/test-harness-built.html";
+const BASE = "http://localhost:4199/test-harness-built.html";
 const browser = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome" });
 const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
 const erreursConsole = [];
@@ -32,13 +32,19 @@ await etape("Ouverture + sélection articles + calcul prix", async () => {
   await page.waitForSelector("text=80,00");
 });
 
-await etape("Coordonnées + récapitulatif", async () => {
-  await page.click('[data-action="aller-coordonnees"]');
-  await page.fill("#hydro-input-ville", "Pau");
-  await page.fill("#hydro-input-nom", "Marie Test");
-  await page.fill("#hydro-input-tel", "0611223344");
-  await page.click('[data-action="aller-recap"]');
-  await page.waitForSelector("text=Marie Test");
+await etape("Passage direct à la réservation (pas de formulaire coordonnées)", async () => {
+  await page.click('[data-action="aller-reservation"]');
+  await page.waitForSelector("text=Reserver mon creneau");
+});
+
+await etape("Le lien Calendly est correct", async () => {
+  const href = await page.locator('a:has-text("Reserver mon creneau")').getAttribute("href");
+  if (href !== "https://calendly.com/hydroproprete/reservation") throw new Error("Lien Calendly inattendu: " + href);
+});
+
+await etape("Le bouton WhatsApp secondaire fonctionne toujours", async () => {
+  await page.waitForSelector("text=WhatsApp");
+  await page.waitForSelector('a[href^="tel:"]');
 });
 
 await etape("Aucune erreur JS", async () => {
