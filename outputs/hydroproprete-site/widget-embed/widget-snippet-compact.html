@@ -1,0 +1,96 @@
+<style>#hydro-devis-widget-root,#hydro-devis-widget-root *{box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;}
+#hydro-devis-widget-root{position:fixed;bottom:24px;right:24px;z-index:999999;}
+#hydro-devis-widget-root .hydro-btn-ouvrir{display:flex;align-items:center;gap:10px;padding:16px 22px;border-radius:999px;border:none;background:#f4a340;color:#fff;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 12px 28px rgba(244,163,64,.45);}
+#hydro-devis-widget-root .hydro-panel{width:360px;max-width:calc(100vw - 32px);max-height:calc(100vh - 48px);display:flex;flex-direction:column;background:#fff;border-radius:20px;box-shadow:0 16px 40px rgba(15,76,110,.28);overflow:hidden;border:1px solid #e1e8ed;}
+#hydro-devis-widget-root .hydro-header{background:#1670a6;color:#fff;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;}
+#hydro-devis-widget-root .hydro-header-close{background:transparent;border:none;color:#fff;font-size:20px;cursor:pointer;line-height:1;}
+#hydro-devis-widget-root .hydro-body{padding:18px;overflow-y:auto;flex:1;}
+#hydro-devis-widget-root .hydro-bulle{background:#f7fafc;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:14px;color:#17242e;max-width:90%;}
+#hydro-devis-widget-root .hydro-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;border:none;cursor:pointer;width:100%;margin-top:10px;}
+#hydro-devis-widget-root .hydro-btn:disabled{opacity:.5;cursor:not-allowed;}
+#hydro-devis-widget-root .hydro-btn-primary{background:#1670a6;color:#fff;}
+#hydro-devis-widget-root .hydro-btn-accent{background:#f4a340;color:#fff;}
+#hydro-devis-widget-root .hydro-btn-ghost{background:#fff;color:#0f4c6e;border:1.5px solid #e1e8ed;}
+#hydro-devis-widget-root .hydro-btn-sm{width:auto;padding:8px 14px;font-size:13px;margin-top:8px;}
+#hydro-devis-widget-root .hydro-btn-link{width:100%;margin-top:10px;background:none;border:none;color:#5b6b76;font-size:12px;cursor:pointer;text-align:center;}
+#hydro-devis-widget-root .hydro-ligne-article{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;border-radius:10px;background:#f7fafc;margin-bottom:8px;}
+#hydro-devis-widget-root .hydro-qte-btn{width:26px;height:26px;border-radius:50%;border:1px solid #e1e8ed;background:#fff;cursor:pointer;}
+#hydro-devis-widget-root .hydro-total-card{padding:12px;margin-top:14px;border-radius:12px;background:#e8f3f8;}
+#hydro-devis-widget-root .hydro-recap{padding:14px;margin-top:12px;font-size:13px;white-space:pre-wrap;border-radius:12px;border:1px solid #e1e8ed;background:#f7fafc;}
+#hydro-devis-widget-root .hydro-secondaire{display:flex;gap:8px;justify-content:center;margin-top:14px;border-top:1px solid #e1e8ed;padding-top:14px;}
+</style>
+<script>
+(function(){
+function demarrer(){
+var C="<"+String.fromCharCode(47);
+var HYDRO_ARTICLES=[{id:"canape-2-3",nom:"Canape 2-3 places",prix:80},{id:"canape-4-5-angle",nom:"Canape 4-5 places / angle",prix:110},{id:"fauteuil",nom:"Fauteuil",prix:50},{id:"chaises-6",nom:"Ensemble de 6 chaises",prix:90},{id:"matelas-2p",nom:"Matelas 2 places",prix:90},{id:"matelas-1p",nom:"Matelas 1 place",prix:60},{id:"tapis",nom:"Tapis",prix:85}];
+var HYDRO_TAUX_CREDIT_IMPOT=0.5;
+var HYDRO_ENTREPRISE={telephone:"06 02 16 92 36",telephoneIntl:"33602169236",email:"hydroproprete@gmail.com",calendly:"https://calendly.com/hydroproprete/reservation"};
+function euros(m){return m.toLocaleString("fr-FR",{style:"currency",currency:"EUR"});}
+if(document.getElementById("hydro-devis-widget-root")){return;}
+var root=document.createElement("div");
+root.id="hydro-devis-widget-root";
+document.body.appendChild(root);
+var etat={ouvert:false,etape:"accueil",selection:{}};
+function quantitePour(id){return etat.selection[id]||0;}
+function totalGeneral(){var t=0;for(var id in etat.selection){var a=HYDRO_ARTICLES.filter(function(x){return x.id===id;})[0];if(a)t+=a.prix*etat.selection[id];}return t;}
+function nbArticles(){var n=0;for(var id in etat.selection)n+=etat.selection[id];return n;}
+function recapTexte(){
+var lignes=[];
+for(var id in etat.selection){var a=HYDRO_ARTICLES.filter(function(x){return x.id===id;})[0];if(a)lignes.push("- "+a.nom+" x"+etat.selection[id]+" : "+euros(a.prix*etat.selection[id]));}
+var total=totalGeneral();var apres=total*(1-HYDRO_TAUX_CREDIT_IMPOT);
+return "Bonjour, je souhaite reserver pour :\n"+lignes.join("\n")+"\n\nTotal : "+euros(total)+" (soit "+euros(apres)+" apres credit d'impot de 50%)";
+}
+function reset(){etat.ouvert=false;etat.etape="accueil";etat.selection={};render();}
+function vAccueil(){
+return '<div class="hydro-bulle">Bonjour, je peux vous donner un prix exact tout de suite. Qu\'avez-vous besoin de faire nettoyer ?'+C+'div>'+
+'<button class="hydro-btn hydro-btn-primary" data-action="aller-articles">Choisir mes articles'+C+'button>'+
+'<p style="font-size:12px;color:#5b6b76;margin-top:12px;text-align:center;">Prestation sur-mesure (auto, terrasse, sinistre...) ? <a href="tel:+'+HYDRO_ENTREPRISE.telephoneIntl+'">Appelez directement'+C+'a>'+C+'p>';
+}
+function vArticles(){
+var html='<div class="hydro-bulle">Selectionnez vos articles et leur quantite - le prix se met a jour en direct.'+C+'div><div style="margin-top:12px;">';
+HYDRO_ARTICLES.forEach(function(a){
+html+='<div class="hydro-ligne-article"><div><div style="font-size:14px;font-weight:600;">'+a.nom+C+'div><div style="font-size:12px;color:#5b6b76;">'+euros(a.prix)+C+'div>'+C+'div><div style="display:flex;align-items:center;gap:8px;"><button class="hydro-qte-btn" data-action="moins" data-id="'+a.id+'">-'+C+'button><span style="min-width:16px;text-align:center;font-weight:700;">'+quantitePour(a.id)+C+'span><button class="hydro-qte-btn" data-action="plus" data-id="'+a.id+'">+'+C+'button>'+C+'div>'+C+'div>';
+});
+html+=C+'div>';
+var n=nbArticles();
+if(n>0){
+var total=totalGeneral();var apres=total*(1-HYDRO_TAUX_CREDIT_IMPOT);
+html+='<div class="hydro-total-card"><div style="display:flex;justify-content:space-between;font-weight:700;"><span>Total'+C+'span><span>'+euros(total)+C+'span>'+C+'div><div style="display:flex;justify-content:space-between;font-size:13px;color:#0f4c6e;"><span>Avec credit d\'impot 50%'+C+'span><span>'+euros(apres)+C+'span>'+C+'div>'+C+'div>';
+}
+html+='<button class="hydro-btn hydro-btn-primary" data-action="aller-reservation" '+(n===0?"disabled":"")+'>Continuer'+C+'button><button class="hydro-btn hydro-btn-ghost" data-action="aller-accueil">Retour'+C+'button>';
+return html;
+}
+function vReservation(){
+var total=totalGeneral();var apres=total*(1-HYDRO_TAUX_CREDIT_IMPOT);
+return '<div class="hydro-bulle">Votre prix est fixe, aucune surprise. Choisissez directement votre creneau.'+C+'div><div class="hydro-recap">'+recapTexte().split("<").join("&lt;")+C+'div><a class="hydro-btn hydro-btn-accent" href="'+HYDRO_ENTREPRISE.calendly+'" target="_blank" rel="noopener">Reserver mon creneau'+C+'a><div class="hydro-secondaire"><a class="hydro-btn hydro-btn-ghost hydro-btn-sm" data-action="envoyer-whatsapp" href="#">WhatsApp'+C+'a><a class="hydro-btn hydro-btn-ghost hydro-btn-sm" href="tel:+'+HYDRO_ENTREPRISE.telephoneIntl+'">Appeler'+C+'a>'+C+'div><button class="hydro-btn-link" data-action="aller-articles">Modifier ma selection'+C+'button>';
+}
+function render(){
+if(!etat.ouvert){root.innerHTML='<button class="hydro-btn-ouvrir" data-action="ouvrir" aria-label="Ouvrir le devis instantane">Devis instantane'+C+'button>';bind();return;}
+var corps="";
+if(etat.etape==="accueil")corps=vAccueil();
+else if(etat.etape==="articles")corps=vArticles();
+else if(etat.etape==="reservation")corps=vReservation();
+root.innerHTML='<div class="hydro-panel" role="dialog" aria-label="Assistant de devis Hydropropete"><div class="hydro-header"><div><div style="font-weight:700;">Devis instantane'+C+'div><div style="font-size:12px;opacity:.85;">Hydropropete - reponse immediate'+C+'div>'+C+'div><button class="hydro-header-close" data-action="fermer" aria-label="Fermer">X'+C+'button>'+C+'div><div class="hydro-body">'+corps+C+'div>'+C+'div>';
+bind();
+}
+function bind(){
+root.querySelectorAll("[data-action]").forEach(function(el){
+el.addEventListener("click",function(ev){
+var action=el.getAttribute("data-action");var id=el.getAttribute("data-id");
+if(action==="ouvrir"){etat.ouvert=true;etat.etape="accueil";render();}
+else if(action==="fermer"){reset();}
+else if(action==="aller-articles"){etat.etape="articles";render();}
+else if(action==="aller-accueil"){etat.etape="accueil";render();}
+else if(action==="aller-reservation"){etat.etape="reservation";render();}
+else if(action==="plus"){etat.selection[id]=(etat.selection[id]||0)+1;render();}
+else if(action==="moins"){var q=(etat.selection[id]||0)-1;if(q<=0)delete etat.selection[id];else etat.selection[id]=q;render();}
+else if(action==="envoyer-whatsapp"){ev.preventDefault();window.open("https://wa.me/"+HYDRO_ENTREPRISE.telephoneIntl+"?text="+encodeURIComponent(recapTexte()),"_blank");}
+});
+});
+}
+render();
+}
+if(document.body){demarrer();}else{document.addEventListener("DOMContentLoaded",demarrer);}
+})();
+</script>

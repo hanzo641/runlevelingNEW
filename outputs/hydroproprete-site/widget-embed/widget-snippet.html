@@ -1,0 +1,354 @@
+<!--
+  Widget "Devis instantané" Hydropropreté — à coller dans Webador.
+  Où le coller : Éditeur Webador > Réglages > Avancé > "Ajouter du code HTML personnalisé"
+  > + Ajouter un code HTML > position "Body – end" > coller tout ce bloc > Enregistrer.
+  Autonome : aucune dépendance externe, aucun compte, aucune clé API nécessaire.
+  Pour changer les tarifs ou les coordonnées, modifiez les valeurs dans HYDRO_ARTICLES
+  et HYDRO_ENTREPRISE tout en bas de ce fichier.
+-->
+<style>
+  #hydro-devis-widget-root, #hydro-devis-widget-root * {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  #hydro-devis-widget-root {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999999;
+  }
+  #hydro-devis-widget-root .hydro-btn-ouvrir {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 22px;
+    border-radius: 999px;
+    border: none;
+    background: #f4a340;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 12px 28px rgba(244, 163, 64, 0.45);
+  }
+  #hydro-devis-widget-root .hydro-panel {
+    width: 360px;
+    max-width: calc(100vw - 32px);
+    max-height: calc(100vh - 48px);
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 16px 40px rgba(15, 76, 110, 0.28);
+    overflow: hidden;
+    border: 1px solid #e1e8ed;
+  }
+  #hydro-devis-widget-root .hydro-header {
+    background: #1670a6;
+    color: #fff;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #hydro-devis-widget-root .hydro-header-close {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+  }
+  #hydro-devis-widget-root .hydro-body {
+    padding: 18px;
+    overflow-y: auto;
+    flex: 1;
+  }
+  #hydro-devis-widget-root .hydro-bulle {
+    background: #f7fafc;
+    border-radius: 14px 14px 14px 4px;
+    padding: 12px 14px;
+    font-size: 14px;
+    color: #17242e;
+    max-width: 90%;
+  }
+  #hydro-devis-widget-root .hydro-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+  }
+  #hydro-devis-widget-root .hydro-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  #hydro-devis-widget-root .hydro-btn-primary { background: #1670a6; color: #fff; }
+  #hydro-devis-widget-root .hydro-btn-accent { background: #f4a340; color: #fff; }
+  #hydro-devis-widget-root .hydro-btn-ghost { background: #fff; color: #0f4c6e; border: 1.5px solid #e1e8ed; }
+  #hydro-devis-widget-root .hydro-btn-link {
+    width: 100%; margin-top: 10px; background: none; border: none;
+    color: #5b6b76; font-size: 12px; cursor: pointer; text-align: center;
+  }
+  #hydro-devis-widget-root .hydro-ligne-article {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border-radius: 10px;
+    background: #f7fafc;
+    margin-bottom: 8px;
+  }
+  #hydro-devis-widget-root .hydro-qte-btn {
+    width: 26px; height: 26px; border-radius: 50%;
+    border: 1px solid #e1e8ed; background: #fff; cursor: pointer;
+  }
+  #hydro-devis-widget-root .hydro-total-card {
+    padding: 12px; margin-top: 14px; border-radius: 12px; background: #e8f3f8;
+  }
+  #hydro-devis-widget-root input,
+  #hydro-devis-widget-root textarea {
+    width: 100%; font-size: 14px; padding: 10px 12px; border-radius: 8px;
+    border: 1px solid #e1e8ed; margin-bottom: 10px;
+  }
+  #hydro-devis-widget-root .hydro-recap {
+    padding: 14px; margin-top: 12px; font-size: 13px; white-space: pre-wrap;
+    border-radius: 12px; border: 1px solid #e1e8ed; background: #f7fafc;
+  }
+</style>
+
+<div id="hydro-devis-widget-root"></div>
+
+<script>
+(function () {
+  // ====== DONNÉES À MODIFIER SI BESOIN ======
+  var HYDRO_ARTICLES = [
+    { id: "canape-2-3", nom: "Canapé 2-3 places", prix: 80 },
+    { id: "canape-4-5-angle", nom: "Canapé 4-5 places / angle", prix: 110 },
+    { id: "fauteuil", nom: "Fauteuil", prix: 50 },
+    { id: "chaises-6", nom: "Ensemble de 6 chaises", prix: 90 },
+    { id: "matelas-2p", nom: "Matelas 2 places", prix: 90 },
+    { id: "matelas-1p", nom: "Matelas 1 place", prix: 60 },
+    { id: "tapis", nom: "Tapis", prix: 85 }
+  ];
+  var HYDRO_TAUX_CREDIT_IMPOT = 0.5;
+  var HYDRO_ENTREPRISE = {
+    telephone: "06 02 16 92 36",
+    telephoneIntl: "33602169236",
+    email: "hydroproprete@gmail.com"
+  };
+  // ====== FIN DES DONNÉES ======
+
+  function euros(montant) {
+    return montant.toLocaleString("fr-FR", { style: "currency", currency: "EUR" });
+  }
+
+  var root = document.getElementById("hydro-devis-widget-root");
+  var etat = {
+    ouvert: false,
+    etape: "accueil", // accueil | articles | coordonnees | recap
+    selection: {}, // { articleId: quantite }
+    ville: "",
+    nom: "",
+    telephone: "",
+    notes: ""
+  };
+
+  function quantitePour(id) {
+    return etat.selection[id] || 0;
+  }
+
+  function totalGeneral() {
+    var total = 0;
+    for (var id in etat.selection) {
+      var article = HYDRO_ARTICLES.filter(function (a) { return a.id === id; })[0];
+      if (article) total += article.prix * etat.selection[id];
+    }
+    return total;
+  }
+
+  function nombreArticlesSelectionnes() {
+    var n = 0;
+    for (var id in etat.selection) n += etat.selection[id];
+    return n;
+  }
+
+  function recapitulatifTexte() {
+    var lignes = [];
+    for (var id in etat.selection) {
+      var article = HYDRO_ARTICLES.filter(function (a) { return a.id === id; })[0];
+      if (article) lignes.push("- " + article.nom + " x" + etat.selection[id] + " : " + euros(article.prix * etat.selection[id]));
+    }
+    var total = totalGeneral();
+    var apresCredit = total * (1 - HYDRO_TAUX_CREDIT_IMPOT);
+    return (
+      "Bonjour, je souhaite un devis pour :\n" + lignes.join("\n") +
+      "\n\nTotal estimé : " + euros(total) + " (soit " + euros(apresCredit) + " après crédit d'impôt de 50%)" +
+      "\n\nVille : " + (etat.ville || "non précisée") +
+      "\nNom : " + (etat.nom || "non précisé") +
+      "\nTéléphone : " + (etat.telephone || "non précisé") +
+      (etat.notes ? "\nPrécisions : " + etat.notes : "") +
+      "\n\nMerci de me recontacter pour confirmer un créneau."
+    );
+  }
+
+  function fermerEtReinitialiser() {
+    etat.ouvert = false;
+    etat.etape = "accueil";
+    etat.selection = {};
+    etat.ville = "";
+    etat.nom = "";
+    etat.telephone = "";
+    etat.notes = "";
+    render();
+  }
+
+  function rendreAccueil() {
+    return (
+      '<div class="hydro-bulle">Bonjour 👋 Je peux vous donner un prix exact tout de suite. Qu\'avez-vous besoin de faire nettoyer ?</div>' +
+      '<button class="hydro-btn hydro-btn-primary" data-action="aller-articles">Choisir mes articles</button>' +
+      '<p style="font-size:12px;color:#5b6b76;margin-top:12px;text-align:center;">Prestation sur-mesure (auto, terrasse, sinistre...) ? ' +
+      '<a href="tel:+' + HYDRO_ENTREPRISE.telephoneIntl + '">Appelez directement</a>.</p>'
+    );
+  }
+
+  function rendreArticles() {
+    var html = '<div class="hydro-bulle">Sélectionnez vos articles et leur quantité — le prix se met à jour en direct.</div>';
+    html += '<div style="margin-top:12px;">';
+    HYDRO_ARTICLES.forEach(function (a) {
+      html +=
+        '<div class="hydro-ligne-article">' +
+        '<div><div style="font-size:14px;font-weight:600;">' + a.nom + '</div>' +
+        '<div style="font-size:12px;color:#5b6b76;">' + euros(a.prix) + '</div></div>' +
+        '<div style="display:flex;align-items:center;gap:8px;">' +
+        '<button class="hydro-qte-btn" data-action="moins" data-id="' + a.id + '">−</button>' +
+        '<span style="min-width:16px;text-align:center;font-weight:700;">' + quantitePour(a.id) + '</span>' +
+        '<button class="hydro-qte-btn" data-action="plus" data-id="' + a.id + '">+</button>' +
+        '</div></div>';
+    });
+    html += '</div>';
+
+    var n = nombreArticlesSelectionnes();
+    if (n > 0) {
+      var total = totalGeneral();
+      var apresCredit = total * (1 - HYDRO_TAUX_CREDIT_IMPOT);
+      html +=
+        '<div class="hydro-total-card">' +
+        '<div style="display:flex;justify-content:space-between;font-weight:700;"><span>Total</span><span>' + euros(total) + '</span></div>' +
+        '<div style="display:flex;justify-content:space-between;font-size:13px;color:#0f4c6e;"><span>Avec crédit d\'impôt 50%</span><span>' + euros(apresCredit) + '</span></div>' +
+        '</div>';
+    }
+
+    html +=
+      '<button class="hydro-btn hydro-btn-primary" data-action="aller-coordonnees" ' + (n === 0 ? "disabled" : "") + '>Continuer</button>' +
+      '<button class="hydro-btn hydro-btn-ghost" data-action="aller-accueil">Retour</button>';
+    return html;
+  }
+
+  function rendreCoordonnees() {
+    var pret = etat.nom && etat.telephone;
+    return (
+      '<div class="hydro-bulle">Parfait. Où intervenons-nous, et comment vous recontacter ?</div>' +
+      '<div style="margin-top:12px;">' +
+      '<input type="text" id="hydro-input-ville" placeholder="Votre ville (zone Pau et alentours)" value="' + etat.ville + '">' +
+      '<input type="text" id="hydro-input-nom" placeholder="Votre nom" value="' + etat.nom + '">' +
+      '<input type="text" id="hydro-input-tel" placeholder="Votre téléphone" value="' + etat.telephone + '">' +
+      '<textarea id="hydro-input-notes" placeholder="Précisions utiles (état des taches, disponibilités...)" rows="3">' + etat.notes + '</textarea>' +
+      '</div>' +
+      '<button class="hydro-btn hydro-btn-primary" data-action="aller-recap" ' + (pret ? "" : "disabled") + '>Voir le récapitulatif</button>' +
+      '<button class="hydro-btn hydro-btn-ghost" data-action="aller-articles">Retour</button>'
+    );
+  }
+
+  function rendreRecap() {
+    return (
+      '<div class="hydro-bulle">Voici votre demande. Envoyez-la en un clic, on vous recontacte rapidement pour fixer un créneau.</div>' +
+      '<div class="hydro-recap">' + recapitulatifTexte().replace(/</g, "&lt;") + '</div>' +
+      '<button class="hydro-btn hydro-btn-accent" data-action="envoyer-whatsapp">Envoyer par WhatsApp</button>' +
+      '<button class="hydro-btn hydro-btn-primary" data-action="envoyer-email">Envoyer par email</button>' +
+      '<a class="hydro-btn hydro-btn-ghost" style="display:flex;" href="tel:+' + HYDRO_ENTREPRISE.telephoneIntl + '">Ou appeler directement — ' + HYDRO_ENTREPRISE.telephone + '</a>' +
+      '<button class="hydro-btn-link" data-action="recommencer">Recommencer une demande</button>'
+    );
+  }
+
+  function render() {
+    if (!etat.ouvert) {
+      root.innerHTML =
+        '<button class="hydro-btn-ouvrir" data-action="ouvrir" aria-label="Ouvrir le devis instantané">💬 Devis instantané</button>';
+      attacherEvenements();
+      return;
+    }
+
+    var corps = "";
+    if (etat.etape === "accueil") corps = rendreAccueil();
+    else if (etat.etape === "articles") corps = rendreArticles();
+    else if (etat.etape === "coordonnees") corps = rendreCoordonnees();
+    else if (etat.etape === "recap") corps = rendreRecap();
+
+    root.innerHTML =
+      '<div class="hydro-panel" role="dialog" aria-label="Assistant de devis Hydropropreté">' +
+      '<div class="hydro-header"><div><div style="font-weight:700;">Devis instantané</div>' +
+      '<div style="font-size:12px;opacity:0.85;">Hydropropreté — réponse immédiate</div></div>' +
+      '<button class="hydro-header-close" data-action="fermer" aria-label="Fermer">✕</button></div>' +
+      '<div class="hydro-body">' + corps + '</div>' +
+      '</div>';
+
+    attacherEvenements();
+
+    if (etat.etape === "coordonnees") {
+      var villeInput = document.getElementById("hydro-input-ville");
+      var nomInput = document.getElementById("hydro-input-nom");
+      var telInput = document.getElementById("hydro-input-tel");
+      var notesInput = document.getElementById("hydro-input-notes");
+      villeInput.addEventListener("input", function (e) { etat.ville = e.target.value; });
+      nomInput.addEventListener("input", function (e) { etat.nom = e.target.value; syncBoutonCoordonnees(); });
+      telInput.addEventListener("input", function (e) { etat.telephone = e.target.value; syncBoutonCoordonnees(); });
+      notesInput.addEventListener("input", function (e) { etat.notes = e.target.value; });
+    }
+  }
+
+  function syncBoutonCoordonnees() {
+    var bouton = root.querySelector('[data-action="aller-recap"]');
+    if (bouton) bouton.disabled = !(etat.nom && etat.telephone);
+  }
+
+  function attacherEvenements() {
+    root.querySelectorAll("[data-action]").forEach(function (el) {
+      el.addEventListener("click", function (e) {
+        var action = el.getAttribute("data-action");
+        var id = el.getAttribute("data-id");
+        if (action === "ouvrir") { etat.ouvert = true; etat.etape = "accueil"; render(); }
+        else if (action === "fermer") { fermerEtReinitialiser(); }
+        else if (action === "aller-articles") { etat.etape = "articles"; render(); }
+        else if (action === "aller-accueil") { etat.etape = "accueil"; render(); }
+        else if (action === "aller-coordonnees") { etat.etape = "coordonnees"; render(); }
+        else if (action === "aller-recap") { etat.etape = "recap"; render(); }
+        else if (action === "recommencer") { fermerEtReinitialiser(); etat.ouvert = true; render(); }
+        else if (action === "plus") { etat.selection[id] = (etat.selection[id] || 0) + 1; render(); }
+        else if (action === "moins") {
+          var q = (etat.selection[id] || 0) - 1;
+          if (q <= 0) delete etat.selection[id]; else etat.selection[id] = q;
+          render();
+        } else if (action === "envoyer-whatsapp") {
+          var texte = encodeURIComponent(recapitulatifTexte());
+          window.open("https://wa.me/" + HYDRO_ENTREPRISE.telephoneIntl + "?text=" + texte, "_blank");
+        } else if (action === "envoyer-email") {
+          var sujet = encodeURIComponent("Demande de devis — " + (etat.nom || "nouveau client"));
+          var corps = encodeURIComponent(recapitulatifTexte());
+          window.location.href = "mailto:" + HYDRO_ENTREPRISE.email + "?subject=" + sujet + "&body=" + corps;
+        }
+      });
+    });
+  }
+
+  render();
+})();
+</script>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" href="data:," />
+<title>Page hôte factice (simule Webador avec ses propres styles)</title>
+<style>
+  /* Styles génériques d'un site hôte quelconque, volontairement "agressifs"
+     pour vérifier que le widget n'est pas cassé par des styles externes. */
+  body { font-family: Arial; background: #fafafa; margin: 0; }
+  button { color: red; border: 5px solid green; font-size: 30px; }
+  input, textarea { border: 5px dashed blue; }
+  * { line-height: 3; }
+  h1 { color: purple; }
+</style>
+</head>
+<body>
+  <h1>Site vitrine factice (test d'intégration)</h1>
+  <p>Ce contenu simule une vraie page Webador avec ses propres styles pour vérifier que le widget Hydropropreté ne casse rien et n'est pas cassé en retour.</p>
+
+  <!-- Contenu du widget-snippet.html collé tel quel ci-dessous -->
+  __WIDGET_SNIPPET__
+
+</body>
+</html>
