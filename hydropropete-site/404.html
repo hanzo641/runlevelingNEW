@@ -6,16 +6,14 @@
   <title>Page introuvable – HydroPropreté</title>
   <meta name="robots" content="noindex, follow">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" href="fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
   <header class="header">
     <div class="container">
       <a href="index.html" class="logo" aria-label="HydroPropreté – Accueil">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" rx="16" fill="#2B4D7F"/><path d="M32 14c7 9.5 11 15.6 11 21.3C43 42.9 38.1 48 32 48s-11-5.1-11-12.7C21 29.6 25 23.5 32 14z" fill="#FFFFFF"/></svg>
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="16" fill="#2B4D7F"/><path d="M32 14c7 9.5 11 15.6 11 21.3C43 42.9 38.1 48 32 48s-11-5.1-11-12.7C21 29.6 25 23.5 32 14z" fill="#FFFFFF"/></svg>
         HydroPropreté
       </a>
       <div class="header-cta">
@@ -50,6 +48,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.min.js" defer></script>
 </body>
 </html>

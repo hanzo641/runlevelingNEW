@@ -20,10 +20,8 @@
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preload" href="../fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/style.min.css">
 
   <script type="application/ld+json">
   {
@@ -73,7 +71,7 @@
   <header class="header">
     <div class="container">
       <a href="../index.html" class="logo" aria-label="HydroPropreté – Accueil">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" rx="16" fill="#2B4D7F"/><path d="M32 14c7 9.5 11 15.6 11 21.3C43 42.9 38.1 48 32 48s-11-5.1-11-12.7C21 29.6 25 23.5 32 14z" fill="#FFFFFF"/></svg>
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="16" fill="#2B4D7F"/><path d="M32 14c7 9.5 11 15.6 11 21.3C43 42.9 38.1 48 32 48s-11-5.1-11-12.7C21 29.6 25 23.5 32 14z" fill="#FFFFFF"/></svg>
         HydroPropreté
       </a>
       <nav class="nav" id="nav">
@@ -81,7 +79,7 @@
           <li><a href="../index.html" class="nav-link">Accueil</a></li>
           <li class="has-dropdown">
             <a href="../index.html#services" class="nav-link">Prestations
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
             </a>
             <div class="dropdown">
               <a href="nettoyage-vitres-pau.html"><span class="dot"></span>Nettoyage de vitres</a>
@@ -143,35 +141,35 @@
           <div class="step-item">
             <div class="step-number"></div>
             <div class="step-content">
-              <h4>Diagnostic rapide</h4>
+              <h3>Diagnostic rapide</h3>
               <p>Nous évaluons le nombre de vitres, leur accessibilité et le type de salissure (calcaire, pollen, poussière de chantier) pour adapter notre intervention.</p>
             </div>
           </div>
           <div class="step-item">
             <div class="step-number"></div>
             <div class="step-content">
-              <h4>Dépoussiérage et prélavage</h4>
+              <h3>Dépoussiérage et prélavage</h3>
               <p>Un premier passage élimine la poussière et les résidus grossiers avant l'application de la solution nettoyante.</p>
             </div>
           </div>
           <div class="step-item">
             <div class="step-number"></div>
             <div class="step-content">
-              <h4>Nettoyage à l'eau osmosée ou à la raclette professionnelle</h4>
+              <h3>Nettoyage à l'eau osmosée ou à la raclette professionnelle</h3>
               <p>Selon la configuration, nous utilisons de l'eau osmosée (sans dépôt, sans traces, séchage naturel) ou la technique traditionnelle à la raclette pour les vitrages classiques.</p>
             </div>
           </div>
           <div class="step-item">
             <div class="step-number"></div>
             <div class="step-content">
-              <h4>Traitement des finitions</h4>
+              <h3>Traitement des finitions</h3>
               <p>Rails, joints, coins de cadres et seuils sont repris manuellement pour un rendu homogène sur l'ensemble du vitrage.</p>
             </div>
           </div>
           <div class="step-item">
             <div class="step-number"></div>
             <div class="step-content">
-              <h4>Contrôle qualité</h4>
+              <h3>Contrôle qualité</h3>
               <p>Chaque vitre est vérifiée sous plusieurs angles de lumière avant la fin de l'intervention, pour garantir un résultat sans traces.</p>
             </div>
           </div>
@@ -238,27 +236,27 @@
         </div>
         <div class="faq-list reveal">
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">Combien coûte un nettoyage de vitres à Pau ?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+            <button class="faq-question" aria-expanded="false">Combien coûte un nettoyage de vitres à Pau ?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
             <div class="faq-answer"><p>Le tarif dépend du nombre de vitres, de leur accessibilité et de la fréquence souhaitée. Nous établissons un devis gratuit et personnalisé après une description rapide de votre bien, sans engagement.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">Utilisez-vous des produits chimiques agressifs ?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+            <button class="faq-question" aria-expanded="false">Utilisez-vous des produits chimiques agressifs ?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
             <div class="faq-answer"><p>Non. Nous privilégions le nettoyage à l'eau osmosée, sans détergent, qui élimine le calcaire et les traces tout en respectant les surfaces, les menuiseries et l'environnement.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">Pouvez-vous nettoyer des vitres en hauteur ou difficiles d'accès ?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+            <button class="faq-question" aria-expanded="false">Pouvez-vous nettoyer des vitres en hauteur ou difficiles d'accès ?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
             <div class="faq-answer"><p>Oui, grâce à nos perches télescopiques pouvant atteindre plusieurs étages depuis le sol, nous intervenons sur des façades en hauteur sans échafaudage dans la majorité des cas.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">À quelle fréquence faut-il nettoyer ses vitres ?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+            <button class="faq-question" aria-expanded="false">À quelle fréquence faut-il nettoyer ses vitres ?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
             <div class="faq-answer"><p>Pour un résultat constant, nous recommandons un passage tous les 1 à 3 mois pour les professionnels et vitrines, et 2 à 4 fois par an pour les particuliers, selon l'exposition du logement.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">Intervenez-vous aussi en copropriété ?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+            <button class="faq-question" aria-expanded="false">Intervenez-vous aussi en copropriété ?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
             <div class="faq-answer"><p>Oui, nous proposons des contrats d'entretien réguliers pour les parties communes vitrées des copropriétés, avec un interlocuteur unique pour le syndic.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">Quelles communes couvrez-vous autour de Pau ?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+            <button class="faq-question" aria-expanded="false">Quelles communes couvrez-vous autour de Pau ?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
             <div class="faq-answer"><p>Nous intervenons à Pau ainsi que dans les communes voisines : Billère, Lons, Jurançon, Lescar, Idron et Bizanos. Contactez-nous si votre commune n'apparaît pas dans cette liste.</p></div>
           </div>
         </div>
@@ -272,9 +270,9 @@
           <h2>Nos autres prestations à Pau</h2>
         </div>
         <div class="internal-links reveal">
-          <a class="internal-link-card" href="nettoyage-copropriete-pau.html"><span class="tag">Copropriété</span><h4>Entretien de copropriété</h4><p>Parties communes entretenues sur contrat régulier.</p></a>
-          <a class="internal-link-card" href="fin-de-chantier-pau.html"><span class="tag">Chantier</span><h4>Fin de chantier</h4><p>Livraison impeccable après travaux, vitres comprises.</p></a>
-          <a class="internal-link-card" href="remise-en-etat-pau.html"><span class="tag">Remise en état</span><h4>Remise en état de logement</h4><p>Un bien prêt à être rendu ou vendu.</p></a>
+          <a class="internal-link-card" href="nettoyage-copropriete-pau.html"><span class="tag">Copropriété</span><h3>Entretien de copropriété</h3><p>Parties communes entretenues sur contrat régulier.</p></a>
+          <a class="internal-link-card" href="fin-de-chantier-pau.html"><span class="tag">Chantier</span><h3>Fin de chantier</h3><p>Livraison impeccable après travaux, vitres comprises.</p></a>
+          <a class="internal-link-card" href="remise-en-etat-pau.html"><span class="tag">Remise en état</span><h3>Remise en état de logement</h3><p>Un bien prêt à être rendu ou vendu.</p></a>
         </div>
       </div>
     </section>
@@ -300,18 +298,18 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="../index.html" class="logo">
-            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" rx="16" fill="#2B4D7F"/><path d="M32 14c7 9.5 11 15.6 11 21.3C43 42.9 38.1 48 32 48s-11-5.1-11-12.7C21 29.6 25 23.5 32 14z" fill="#FFFFFF"/></svg>
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="16" fill="#2B4D7F"/><path d="M32 14c7 9.5 11 15.6 11 21.3C43 42.9 38.1 48 32 48s-11-5.1-11-12.7C21 29.6 25 23.5 32 14z" fill="#FFFFFF"/></svg>
             HydroPropreté
           </a>
           <p>Nettoyage professionnel de vitres, copropriétés et biens immobiliers à Pau et son agglomération.</p>
           <div class="footer-social">
-            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A5 5 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A5 5 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
           </div>
         </div>
         <div class="footer-col">
-          <h4>Prestations</h4>
+          <h3>Prestations</h3>
           <ul>
             <li><a href="nettoyage-vitres-pau.html">Nettoyage de vitres</a></li>
             <li><a href="nettoyage-copropriete-pau.html">Entretien copropriété</a></li>
@@ -322,7 +320,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Entreprise</h4>
+          <h3>Entreprise</h3>
           <ul>
             <li><a href="../index.html">Accueil</a></li>
             <li><a href="../index.html#avant-apres">Nos résultats</a></li>
@@ -331,7 +329,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Informations</h4>
+          <h3>Informations</h3>
           <ul>
             <li><a href="tel:+33559000000">05 59 00 00 00</a></li>
             <li><a href="mailto:contact@hydropropete-pau.fr">contact@hydropropete-pau.fr</a></li>
@@ -350,11 +348,16 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/33659000000?text=Bonjour%2C%20je%20souhaite%20un%20devis%20HydroPropret%C3%A9" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contacter HydroPropreté sur WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.44 1.32 4.94L2.05 22l5.29-1.39a9.9 9.9 0 0 0 4.7 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2zm5.8 14.14c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.16-4.94-4.35-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.26-.28.58-.35.77-.35.19 0 .38 0 .55.01.18.01.42-.07.65.5.24.58.81 2 .88 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.28.28-.12.56.16.28.71 1.17 1.53 1.9 1.05.93 1.94 1.22 2.22 1.36.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.52.72 1.78.85.26.14.43.2.5.32.07.12.07.66-.17 1.34z"/></svg>
+    <div class="mobile-cta-bar">
+    <a href="tel:+33559000000" class="btn btn-outline">Appeler</a>
+    <a href="../contact.html" class="btn btn-primary">Devis gratuit</a>
+  </div>
+
+<a href="https://wa.me/33659000000?text=Bonjour%2C%20je%20souhaite%20un%20devis%20HydroPropret%C3%A9" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contacter HydroPropreté sur WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.44 1.32 4.94L2.05 22l5.29-1.39a9.9 9.9 0 0 0 4.7 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2zm5.8 14.14c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.16-4.94-4.35-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.26-.28.58-.35.77-.35.19 0 .38 0 .55.01.18.01.42-.07.65.5.24.58.81 2 .88 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.28.28-.12.56.16.28.71 1.17 1.53 1.9 1.05.93 1.94 1.22 2.22 1.36.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.52.72 1.78.85.26.14.43.2.5.32.07.12.07.66-.17 1.34z"/></svg>
     <span class="wa-text">Discuter sur WhatsApp</span>
   </a>
 
-  <script src="../js/main.js"></script>
+  <script src="../js/main.min.js" defer></script>
 </body>
 </html>

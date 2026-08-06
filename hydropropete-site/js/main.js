@@ -149,6 +149,7 @@ function initCompareSlider() {
     const clamped = Math.min(98, Math.max(2, percent));
     afterWrap.style.width = clamped + '%';
     handle.style.left = clamped + '%';
+    handle.setAttribute('aria-valuenow', String(Math.round(clamped)));
   };
 
   const positionFromEvent = (clientX) => {
@@ -185,6 +186,7 @@ function initCompareSlider() {
   handle.setAttribute('aria-label', 'Curseur de comparaison avant / après');
   handle.setAttribute('aria-valuemin', '0');
   handle.setAttribute('aria-valuemax', '100');
+  handle.setAttribute('aria-valuenow', '50');
   handle.addEventListener('keydown', (e) => {
     const current = parseFloat(afterWrap.style.width) || 50;
     if (e.key === 'ArrowLeft') setPosition(current - 5);
@@ -205,6 +207,9 @@ function initFaq() {
 
     question.addEventListener('click', () => {
       const isOpen = item.classList.contains('is-open');
+      // Read scrollHeight before any style writes below — reading layout
+      // geometry right after a write forces a synchronous reflow.
+      const targetHeight = answer.scrollHeight;
 
       items.forEach((other) => {
         other.classList.remove('is-open');
@@ -214,7 +219,7 @@ function initFaq() {
 
       if (!isOpen) {
         item.classList.add('is-open');
-        answer.style.maxHeight = answer.scrollHeight + 'px';
+        answer.style.maxHeight = targetHeight + 'px';
         question.setAttribute('aria-expanded', 'true');
       }
     });
